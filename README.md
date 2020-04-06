@@ -1,2 +1,2 @@
-# python-trading
-my first steps in using python for technical analysis and algo trading
+# Python-trading
+My first steps in using python for technical analysis and algorithmic trading
