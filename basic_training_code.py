@@ -1,15 +1,15 @@
 # Module & Libraries Import
+from pandas.plotting import scatter_matrix
 from pandas_datareader import data as pdr
 from datetime import date
 from time import time
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-import cufflinks as cf
 
 # Variables instantiation
 start_time = time()
-start_date = date(2020, 1, 1)
+start_date = date(2015, 1, 1)
 tickers = ['AAPL', 'C', 'GS', 'AMZN']
 
 
@@ -39,9 +39,8 @@ pct_chg_log = np.log(pct_chg)
 cum_return = (1 + pct_chg).cumprod()
 
 # Basic stocks plots
-fig1 = all_data.unstack(level=0)['Close'].iplot(asFigure=True, subplots=True, subplot_titles=True, legend=True)
-fig1.show()
-fig2 = pct_chg[tickers[0]].iplot(asFigure=True, kind='histogram', opacity=.75, bins=50)
-fig2.show()
-
+pct_chg.hist(bins=50, sharex=True)
+scatter_matrix(pct_chg, diagonal='kde', alpha=0.1)
+plt.show()
+###################################################
 print("--- %s seconds ---" % (time() - start_time))
