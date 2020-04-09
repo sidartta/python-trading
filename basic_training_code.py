@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on 2020-04-04
-Last changed on 2020-04-07
-@author: MOHAMED KHALF
-"""
-
 # Module & Libraries Import
 from pandas_datareader import data as pdr
 from datetime import date
@@ -45,32 +38,10 @@ for x in tickers:
 pct_chg_log = np.log(pct_chg)
 cum_return = (1 + pct_chg).cumprod()
 
-# Quantitative Technical analysis plots
-qf = cf.QuantFig(all_data['AAPL], title='Basic Technical Analysis', legend='top', name=tickers[0])
-qf.add_sma([50, 150], width=2, color=['green', 'lightgreen'], legendgroup=True)
-qf.add_rsi(periods=20, color='java')
-qf.add_bollinger_bands(periods=20, boll_std=2, colors=['magenta', 'grey'], fill=True)
-qf.add_volume()
-qf.add_macd()
-fig = qf.iplot(asFigure=True)
-fig.show()
-
-'''
 # Basic stocks plots
-fig1 = all_data.unstack(level=0)['Close'].iplot(asFigure=True, subplots=True, subplot_titles=True, legend=True, style=)
+fig1 = all_data.unstack(level=0)['Close'].iplot(asFigure=True, subplots=True, subplot_titles=True, legend=True)
 fig1.show()
 fig2 = pct_chg[tickers[0]].iplot(asFigure=True, kind='histogram', opacity=.75, bins=50)
 fig2.show()
-'''
-
-'''
-# Create a new DatFrame containing Stock returns for each stock
-returns = close.pct_change(fill_method='ffill')
-sns.pairplot(returns[1:])
-
-# Get the best and worst day for each stock
-best_day = returns.idxmax()
-worst_day = returns.idxmin()
-'''
 
 print("--- %s seconds ---" % (time() - start_time))
