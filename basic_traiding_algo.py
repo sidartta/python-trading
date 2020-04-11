@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from pandas.plotting import scatter_matrix
-from pandas_datareader import data as pdr
+import base_algo_trade as bat
 
 # Variables instantiation
 yrs = 3
@@ -15,21 +15,8 @@ start_date = date.today() - timedelta(365 * yrs)
 end_date = date.today()
 tickers = ['AAPL', 'C', 'GS', 'BBD-B.TO']
 
-
-# Function to get tickers data from Yahoo! Finance
-def get(tick, startdate, enddate=None, r='D'):
-    def stock_data(ticker):
-        tk = pdr.get_data_yahoo(ticker, start=startdate, end=enddate)
-        if r is not None:
-            tk = tk.resample(rule=r, axis=0, closed='right').mean()
-        return tk.dropna()
-
-    datas = map(stock_data, tick)
-    return pd.concat(datas, keys=tickers, names=['Ticker', 'Date'])
-
-
 # Read Equity data
-all_data = get(tickers, start_date)
+all_data = bat.get(tickers, start_date, r='m')
 
 # Save Initial data to an excel file
 # eq_df.to_excel("stock_data.xlsx", sheet_name='Initial Data')
