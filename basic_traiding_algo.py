@@ -12,15 +12,15 @@ import base_algo_trade as bat
 yrs = 10
 start_date = date.today() - timedelta(365 * yrs)
 end_date = date.today()
-tickers = ['AAPL', 'C', 'GS', 'BBD-B.TO']
+tickers = ['AAPL', 'AMZN', 'TSLA', 'BBD-B.TO']
 
 # Read Equity data
-all_data = bat.get(tickers, start_date, r='d')
+close_data, tickers = bat.get_close(tickers, start_date, end_date, r='d')
 
 # Various line codes for basic technical analysis
 pct_chg = pd.DataFrame()
 for x in tickers:
-    pct_chg[x] = all_data.loc[(x, 'Close')].pct_change(fill_method='ffill')
+    pct_chg[x] = close_data[x].pct_change(fill_method='ffill')
 pct_chg_log = np.log(pct_chg)
 
 # Basic stocks plots

@@ -1,4 +1,4 @@
-# Module & Libraries Import
+'''# Module & Libraries Import
 import pandas as pd
 from pandas_datareader import data as pdr
 
@@ -21,4 +21,4 @@ def get_close(tick, start_date, end_date=None, r='d'):
                 print('Failed to retrieve {0} stock data... retrying'.format(tick[i]))
                 continue
         tentative = tentative + 1
-    return stock_df.dropna(), bucket
+    return stock_df.dropna(), bucket'''
