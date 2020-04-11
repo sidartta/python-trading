@@ -12,5 +12,5 @@ def get(tick, start_date, end_date=None, r='d'):
                                 interval=r)
         return tk.dropna()
 
-    datas = map(stock_data, tick)
-    return pd.concat(datas, keys=tickers, names=['Ticker', 'Date'])
+    data = map(stock_data, tick)
+    return pd.concat(data, keys=tick, names=['Ticker', 'Date'])
