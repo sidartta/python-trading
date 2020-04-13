@@ -11,8 +11,8 @@ marketCaps = []
 totalVolumes = []
 circulatingSupplys = []
 
-for i in range(0, 10):
-    CryptoCurrenciesUrl = "https://finance.yahoo.com/cryptocurrencies"
+for i in range(0, 4):
+    CryptoCurrenciesUrl = "https://finance.yahoo.com/cryptocurrencies?count=0&offset=" + str(i * 25)
     r = requests.get(CryptoCurrenciesUrl)
     data = r.text
     soup = BeautifulSoup(data)
@@ -40,3 +40,6 @@ crypto = pd.DataFrame({'Price': prices,
                        'Circulating Supply': circulatingSupplys},
                       index=names)
 print(crypto)
+
+# Save Initial data to an excel file
+crypto.to_excel("crypto.xlsx", sheet_name='Crypto Data')
