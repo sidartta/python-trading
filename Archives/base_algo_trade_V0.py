@@ -3,7 +3,7 @@ import pandas as pd
 from pandas_datareader import data as pdr
 
 
-def get_close(tick, start_date, end_date=None, r='d'):
+def get_stock_data(tick, start_date, end_date=None, r='d'):
     stock_df = pd.DataFrame()
     tentative = 0
     bucket = []
