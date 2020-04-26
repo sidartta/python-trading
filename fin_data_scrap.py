@@ -129,13 +129,14 @@ def crypto_macro_data():
                 circulating_supplies.append(circulatingSupplies.text)
 
     crypto = pd.DataFrame(
-        {'Price': prices,
-         'Change': changes,
-         '% Change': percent_changes,
-         'Market Cap': market_caps,
-         'Total Volume': total_volumes,
-         'Circulating Supply': circulating_supplies
-         },
+        {
+            'Price': prices,
+            'Change': changes,
+            '% Change': percent_changes,
+            'Market Cap': market_caps,
+            'Total Volume': total_volumes,
+            'Circulating Supply': circulating_supplies
+        },
         index=names
     )
 

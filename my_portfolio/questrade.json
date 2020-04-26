@@ -1,0 +1,49 @@
+{
+  "RRSP": {
+    "2020-04-25": {
+      "Cash": "56.21",
+      "Positions": [
+        {
+          "Ticker": "VCN.TO",
+          "Name": "VANGUARD FTSE CDA ALL CAP INDEX ETF",
+          "Type": "ETF",
+          "Category": "Canadian Market",
+          "Currency": "CAD",
+          "Shares": 18,
+          "Cost/Share": 33.6133,
+          "Open Date": "2019-06-21"
+        },
+        {
+          "Ticker": "VEE.TO",
+          "Name": "VANGUARD FTSE EMERGING MKTS ALL CAP INDEX ETF",
+          "Type": "ETF",
+          "Category": "International Market",
+          "Currency": "CAD",
+          "Shares": 5,
+          "Cost/Share": 33.6840,
+          "Open Date": "2019-06-21"
+        },
+        {
+          "Ticker": "VIU.TO",
+          "Name": "VANGUARD FTSE DEVELOPED ALL CAP EX NORTH AMER INDEX ETF",
+          "Type": "ETF",
+          "Category": "International Market",
+          "Currency": "CAD",
+          "Shares": 17,
+          "Cost/Share": 27.9935,
+          "Open Date": "2019-06-21"
+        },
+        {
+          "Ticker": "VUN.TO",
+          "Name": "VANGUARD U S TOTAL MARKET INDEX ETF",
+          "Type": "ETF",
+          "Category": "US Market",
+          "Currency": "CAD",
+          "Shares": 15,
+          "Cost/Share": 53.9233,
+          "Open Date": "2019-06-21"
+        }
+      ]
+    }
+  }
+}
